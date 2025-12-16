@@ -1,31 +1,31 @@
-CC      := cc
-CFLAGS  := -Wall -Wextra -Werror
-NAME    := push_swap
+CC      = cc
+CFLAGS  = -Wall -Wextra -Werror
+NAME    = push_swap
 
-SRC_DIR := srcs
-OBJ_DIR := objs
-INC_DIR := includes
+SRC_DIR = srcs
+OBJ_DIR = objs
+INC_DIR = includes
 
-SRC     := $(wildcard $(SRC_DIR)/*.c)
-OBJ     := $(patsubst $(SRC_DIR)/%.c,$(OBJ_DIR)/%.o,$(SRC))
-DEPS    := $(OBJ:.o=.d)
+SRCS    = $(wildcard $(SRC_DIR)/*.c)
+OBJS    = $(patsubst $(SRC_DIR)/%.c,$(OBJ_DIR)/%.o,$(SRCS))
+DEPS    = $(OBJS:.o=.d)
 
 all: $(NAME)
 
-$(NAME): $(OBJ)
-    $(CC) $(CFLAGS) $^ -o $@
+$(NAME): $(OBJS)
+	$(CC) $(CFLAGS) $^ -o $@
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c | $(OBJ_DIR)
-    $(CC) $(CFLAGS) -MMD -MP -I$(INC_DIR) -c $< -o $@
+	$(CC) $(CFLAGS) -MMD -MP -I$(INC_DIR) -c $< -o $@
 
 $(OBJ_DIR):
-    mkdir -p $@
+	mkdir -p $@
 
 clean:
-    rm -rf $(OBJ_DIR)
+	rm -rf $(OBJ_DIR)
 
 fclean: clean
-    rm -f $(NAME)
+	rm -f $(NAME)
 
 re: fclean all
 

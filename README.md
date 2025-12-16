@@ -30,7 +30,7 @@ push_swap is an algorithmic project that sorts integers using two stacks (A and 
 - Algorithms:
   - Base cases (3/5 elements minimal moves).
   - For big inputs: radix (LSD) or chunked greedy rotations to minimize total ops.
-- Error handling: print `Error` to stderr and exit on invalid input.
+- Error handling: print `Error` and exit on invalid input.
 - Code style: 42 Norm.
 
 ## Resources
