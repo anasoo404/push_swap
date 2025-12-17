@@ -6,23 +6,23 @@
 /*   By: asmaili <asmaili@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 18:38:31 by asmaili           #+#    #+#             */
-/*   Updated: 2025/12/16 19:06:19 by asmaili          ###   ########.fr       */
+/*   Updated: 2025/12/17 01:26:06 by asmaili          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	sa(int *a)
+void	sa(t_stack *a)
 {
-	int
+	write(1, "sa", 2);
 }
 
-void	sb(int *b)
+void	sb(t_stack *b)
 {
-
+	write(1, "sb", 2);
 }
-void	ss(int *a, int *b)
+
+void	ss(t_stack *a, t_stack *b)
 {
-	sa(a);
-	sb(b)
+	write(1, "ss", 2);
 }

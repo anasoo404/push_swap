@@ -6,7 +6,23 @@
 /*   By: asmaili <asmaili@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 16:33:48 by asmaili           #+#    #+#             */
-/*   Updated: 2025/12/16 16:33:49 by asmaili          ###   ########.fr       */
+/*   Updated: 2025/12/17 01:27:05 by asmaili          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "push_swap.h"
+
+void	ra(t_stack *a)
+{
+	write(1, "ra", 2);
+}
+
+void	rb(t_stack *b)
+{
+	write(1, "rb", 2);
+}
+
+void	rr(t_stack *a, t_stack *b)
+{
+	write(1, "rr", 2);
+}
