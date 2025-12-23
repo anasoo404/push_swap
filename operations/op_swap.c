@@ -6,7 +6,7 @@
 /*   By: asmaili <asmaili@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 18:38:31 by asmaili           #+#    #+#             */
-/*   Updated: 2025/12/17 01:26:06 by asmaili          ###   ########.fr       */
+/*   Updated: 2025/12/22 02:38:19 by asmaili          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,39 @@
 
 void	sa(t_stack *a)
 {
-	write(1, "sa", 2);
+	int	tmp;
+
+	if (a->size < 2)
+		return ;
+	tmp = a->data[0];
+	a->data[0] = a->data[1];
+	a->data[1] = tmp;
+	write(1, "sa\n", 3);
 }
 
 void	sb(t_stack *b)
 {
-	write(1, "sb", 2);
+	int	tmp;
+
+	if (b->size < 2)
+		return ;
+	tmp = b->data[0];
+	b->data[0] = b->data[1];
+	b->data[1] = tmp;
+	write(1, "sb\n", 3);
 }
 
 void	ss(t_stack *a, t_stack *b)
 {
-	write(1, "ss", 2);
+	int	tmp;
+
+	if (a->size < 2 || b->size < 2)
+		return ;
+	tmp = a->data[0];
+	a->data[0] = a->data[1];
+	a->data[1] = tmp;
+	tmp = b->data[0];
+	b->data[0] = b->data[1];
+	b->data[1] = tmp;
+	write(1, "ss\n", 3);
 }

@@ -6,12 +6,12 @@
 /*   By: asmaili <asmaili@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/22 02:55:13 by asmaili           #+#    #+#             */
-/*   Updated: 2025/12/22 02:56:01 by asmaili          ###   ########.fr       */
+/*   Updated: 2025/12/22 21:17:36 by asmaili          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h>
+//#include <stdio.h>
 
 /*
 typedef struct s_stack
@@ -117,22 +117,5 @@ int	has_double(t_stack *a)
 	while (i < vi->capacity)
 		printf("%d ", vi->data[i++]);
 	printf("\nhas_double : %d", has_double(vi));
-	return (0);
-}*/
-
-/*int	main(int ac, char **av)
-{
-	while (ac - 1)
-	{
-		av += 1;
-		printf("1 : %s\n", *av);
-		*av += 1;
-		if (!(**av))
-		{
-			printf("jamel%c\n", **av);
-		}
-		ac -= 1;
-		printf("%d\n", ac);
-	}
 	return (0);
 }*/

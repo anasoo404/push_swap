@@ -6,7 +6,7 @@
 /*   By: asmaili <asmaili@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 14:15:13 by asmaili           #+#    #+#             */
-/*   Updated: 2025/12/17 01:24:46 by asmaili          ###   ########.fr       */
+/*   Updated: 2025/12/22 22:50:44 by asmaili          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,17 +20,24 @@
 
 typedef struct s_stack
 {
-	int *data; // int to sort
-	int size; // current size
-	int capacity; // total_capacity
+	int	capacity;
+	int	size;
+	int	*data;
 }	t_stack;
 
 /*parsing*/
-int		*get_stack(int ac, char **av);
-
+int		check_input(char *av, int *capacity);
+int		get_capacity(int ac, char **av);
+void	fill_data(t_stack *a, char **av);
+int		has_double(t_stack *a);
+t_stack	*get_stack(int ac, char **av);
+t_stack	*get_b(t_stack *a);
 /*parsing utils*/
+int		ft_strlen(char *str);
 void	free_stack(t_stack *stack);
-long	my_atoi(char **str);
+int		is_num(int c);
+int		is_sign(int c);
+long	my_atol(char **str);
 
 /*operations*/
 	/*swap*/
@@ -43,10 +50,16 @@ void	pb(t_stack *a, t_stack *b);
 	/*rotate*/
 void	ra(t_stack *a);
 void	rb(t_stack *b);
+void	r_without_write(t_stack *stack);
 void	rr(t_stack *a, t_stack *b);
 	/*reverse rotate*/
 void	rra(t_stack *a);
 void	rrb(t_stack *b);
+void	rr_without_write(t_stack *stack);
 void	rrr(t_stack *a, t_stack *b);
+
+/*algo*/
+void	push_half_of_a_data_to_b(t_stack *a, t_stack *b);
+int		tranform_data_in_index(t_stack *a);
 
 #endif
