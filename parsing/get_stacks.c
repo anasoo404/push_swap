@@ -6,7 +6,7 @@
 /*   By: asmaili <asmaili@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/21 22:52:12 by asmaili           #+#    #+#             */
-/*   Updated: 2025/12/22 02:57:04 by asmaili          ###   ########.fr       */
+/*   Updated: 2025/12/25 22:11:42 by asmaili          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,8 @@ t_stack	*get_b(t_stack *a)
 {
 	t_stack	*b;
 
+	if (!a)
+		return (NULL);
 	b = malloc(sizeof(t_stack));
 	if (!b)
 		return (NULL);

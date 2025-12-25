@@ -6,7 +6,7 @@
 /*   By: asmaili <asmaili@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 14:12:48 by asmaili           #+#    #+#             */
-/*   Updated: 2025/12/22 20:38:57 by asmaili          ###   ########.fr       */
+/*   Updated: 2025/12/25 22:15:26 by asmaili          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ static int	is_sort(t_stack *a)
 	return (1);
 }
 
-
 int	main(int ac, char **av)
 {
 	t_stack	*a;
@@ -41,6 +40,10 @@ int	main(int ac, char **av)
 		return (write(1, "Error\n", 5), 1);
 	if (a->capacity == 1)
 		return (0);
+	b = get_b(a);
+	if (!b)
+		return (write(1, "Error\n", 5), 1);
+	tranform_data_in_index(a);
 	while (!is_sort(a) && b->size != 0)
 	{
 		// fais l algo

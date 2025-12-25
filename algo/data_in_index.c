@@ -6,12 +6,12 @@
 /*   By: asmaili <asmaili@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/22 19:53:13 by asmaili           #+#    #+#             */
-/*   Updated: 2025/12/25 21:36:09 by asmaili          ###   ########.fr       */
+/*   Updated: 2025/12/25 21:38:57 by asmaili          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h>
+//#include <stdio.h>
 
 static void	fill_min(int *min, int i, int *data, int size)
 {
@@ -79,7 +79,7 @@ int	tranform_data_in_index(t_stack *a)
 	return (free(min), free(data), 1);
 }
 
-int	main(int ac, char **av)
+/*int	main(int ac, char **av)
 {
 	t_stack	*a;
 	t_stack	*b;
@@ -101,12 +101,5 @@ int	main(int ac, char **av)
 	while (i < a->capacity)
 		printf("%d ", a->data[i++]);
 	printf("\n");
-	/* push_half_of_a_data_to_b(a, b);
-	i = 0;
-	while (i < a->size)
-		printf("\nafter push half STACK a : %d\n", a->data[i++]);
-	i = 0;
-	while (i < b->size)
-		printf("after push half STACK b : %d\n", b->data[i++]); */
 	return (0);
-}
+}*/
