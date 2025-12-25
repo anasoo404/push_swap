@@ -6,7 +6,7 @@
 /*   By: asmaili <asmaili@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/22 19:53:13 by asmaili           #+#    #+#             */
-/*   Updated: 2025/12/25 17:02:29 by asmaili          ###   ########.fr       */
+/*   Updated: 2025/12/25 21:36:09 by asmaili          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,20 +16,26 @@
 static void	fill_min(int *min, int i, int *data, int size)
 {
 	int	j;
+	int	min_found;
 
 	min[i] = i;
+	min_found = INT_MAX;
 	j = 0;
 	while (j < size)
 	{
-		if (data[i] > data[j])
+		if (data[j] < min_found && i == 0)
 		{
 			min[i] = j;
-			data[j] = -2147483648;
+			min_found = data[j];
+		}
+		else if (data[j] < min_found && data[j] != INT_MIN)
+		{
+			min[i] = j;
+			min_found = data[j];
 		}
 		j += 1;
 	}
-	if (min[i] == i)
-		data[i] = -2147483648;
+	data[min[i]] = INT_MIN;
 }
 
 static void	fill_data_with_index(t_stack *a, int *min)
@@ -51,10 +57,8 @@ int	tranform_data_in_index(t_stack *a)
 {
 	int	*data;
 	int	*min;
-	int	size;
 	int	i;
 
-	size = a->capacity;
 	min = malloc(sizeof(int) * a->capacity);
 	data = malloc(sizeof(int) * a->capacity);
 	if (!min || !data)
@@ -62,13 +66,13 @@ int	tranform_data_in_index(t_stack *a)
 	i = 0;
 	while (i < a->capacity)
 	{
-		data[i] = data[i];
+		data[i] = a->data[i];
 		i += 1;
 	}
 	i = 0;
-	while (i < size)
+	while (i < a->capacity)
 	{
-		fill_min(min, i, data, size);
+		fill_min(min, i, data, a->capacity);
 		i += 1;
 	}
 	fill_data_with_index(a, min);

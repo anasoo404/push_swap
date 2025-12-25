@@ -6,7 +6,7 @@
 /*   By: asmaili <asmaili@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 14:15:13 by asmaili           #+#    #+#             */
-/*   Updated: 2025/12/22 22:50:44 by asmaili          ###   ########.fr       */
+/*   Updated: 2025/12/25 21:36:25 by asmaili          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 # define PUSH_SWAP_H
 
 # define ERROR -1
+# define INT_MAX 2147483647
+# define INT_MIN -2147483648
 
 # include <unistd.h>
 # include <stdlib.h>
